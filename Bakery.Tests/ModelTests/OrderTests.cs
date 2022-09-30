@@ -9,18 +9,17 @@ namespace Bakery.Tests
   [TestClass]
   public class OrderTests : IDisposable
   {
-  /*
     public void Dispose(){
       Order.ClearAll();
     }
 
     [TestMethod]
-    public void OrderConstructor_CreatesInstanceOfOrder_Order()
+    public void OrderConstructor_CreatesInstanceOfOrderObject_Order()
     {
-      Order newOrder = new Order("test");  
+      Order newOrder = new Order("test", "this is a test", 0, 09302022);  
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
-    
+    /*
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
