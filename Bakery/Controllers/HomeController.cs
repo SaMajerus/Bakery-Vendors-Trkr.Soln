@@ -6,18 +6,18 @@ namespace Bakery.Controllers
   {
 
     [HttpGet("/")]
-    // [HttpGet("/vendors")]
     public ActionResult Index()
     {
       return View();
     }
 
+/*
     [Route("/favorite_photos")]
     public ActionResult FavoritePhotos()
     {
       return View();
     }
-
+*/ 
 
   }
 }
