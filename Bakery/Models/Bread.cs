@@ -1,7 +1,7 @@
 using System;
 
 /*     Business Logic ('Bread')     */ 
-namespace Bakery
+namespace Bakery.Models
 { 
   public class Bread{
     public int Quantity {get; set;} 
