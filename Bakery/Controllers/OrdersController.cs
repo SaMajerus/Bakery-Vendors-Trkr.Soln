@@ -5,13 +5,13 @@ using Bakery.Models;
 
 namespace Bakery.Controllers
 {
-  public class VendorsController : Controller
+  public class OrdersController : Controller
   {
 
     [HttpGet("/orders")]
     public ActionResult Index()
     {
-      List<Orders> allOrders = Order.GetAll();
+      List<Order> allOrders = Order.GetAll();
       return View(allOrders);
     }
 
