@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Order!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Add an Order</h1>
+    <p>Enter your order details here:</p>
+
+    <form action="/orders" method="post">
+      <label for="orderTitle">Order Title</label>
+      <input id="orderTitle" name="orderTitle" type="text">
+      <label for="orderDescription">Description</label>
+      <input id="orderDescription" name="orderDescription" type="text">
+      <label for="price">Price (Grand Total)</label>
+      <input id="price" name="price" type="number">
+      <label for="date">Date (mmddyyyy)</label>
+      <input id="date" name="date" type="number">
+      <button type="submit">Add</button>
+    </form>
+
+    <p><a href="/">Back home</a></p>
+    <p><a href="/categories">Back to Vendors</a></p>
+  </body>
+</html>
