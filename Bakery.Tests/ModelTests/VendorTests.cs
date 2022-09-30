@@ -5,7 +5,8 @@ using System;
 
 namespace Bakery.Tests
 {
-/*  [TestClass]
+/*  
+  [TestClass]
   public class ItemTests : IDisposable
   {
 
