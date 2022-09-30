@@ -24,7 +24,7 @@ namespace Bakery.Models{
 
     public static List<Order> GetAll()  //'Getter' method
     {
-//      return _orders;
+      return _orders;
     }
 
     public static void ClearAll()

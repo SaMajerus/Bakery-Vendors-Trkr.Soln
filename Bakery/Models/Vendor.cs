@@ -9,8 +9,8 @@ namespace Bakery.Models{
     public List<Order> Orders { get; set; }  
     public int Id { get; }
 
-/*
-    public Vendor(string name, string desc) { /*
+
+    public Vendor(string name, string desc) { 
       VendorName = name;
       VendorDesc = desc;
       _vendors.Add(this);
@@ -31,7 +31,7 @@ namespace Bakery.Models{
     }
 
     public void AddVendor(Vendor ven) {
-      Vendors.Add(ven);
-    }*/
+      _vendors.Add(ven);
+    }
   }
 }
