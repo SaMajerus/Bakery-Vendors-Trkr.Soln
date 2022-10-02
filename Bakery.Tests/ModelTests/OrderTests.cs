@@ -19,13 +19,13 @@ namespace Bakery.Tests
       Order newOrder = new Order("test", "this is a test", 0, 09302022);  
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
-    /*
+    
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
       //Arrange
-      string description = "Walk the dog.";
-      Order newOrder = new Order(description);
+      string description = "30 Bread Loaves, 20 Pastries";
+      Order newOrder = new Order("test", description, 290, 10012022);  //Params: (string name, string description, int totalPrice, int d8) 
 
       //Act
       string result = newOrder.Description;
@@ -33,7 +33,7 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(description, result);
     }
-
+/*
     [TestMethod]
     public void SetDescription_SetDescription_String()
     {
