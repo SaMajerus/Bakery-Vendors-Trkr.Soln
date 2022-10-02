@@ -63,7 +63,7 @@ namespace Bakery.Tests
       // Assert
       CollectionAssert.AreEqual(newList, result);
     }
-/*
+
     [TestMethod]
     public void GetAll_ReturnsOrders_OrderList()
     {
@@ -80,7 +80,7 @@ namespace Bakery.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
-
+/*
     [TestMethod]
     public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
     {
