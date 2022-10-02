@@ -16,7 +16,7 @@ namespace Bakery.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrderObject_Order()
     {
-      Order newOrder = new Order("test", "this is a test", 0, 09302022);  
+      Order newOrder = new Order("test", "this is a test", 0, 09302022, 10022022);  
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
     
@@ -25,7 +25,7 @@ namespace Bakery.Tests
     {
       //Arrange
       string description = "30 Bread Loaves, 20 Pastries";
-      Order newOrder = new Order("test", description, 134, 10012022);  //Params: (string name, string description, int totalPrice, int d8) 
+      Order newOrder = new Order("test", description, 134, 10012022, 10032022);  //Params: (string name, string description, int totalPrice, int d8) 
         //[Using last week's CR program to calculate the price]
 
       //Act
@@ -40,7 +40,7 @@ namespace Bakery.Tests
     {
       //Arrange
       string description = "30 Bread Loaves, 20 Pastries";
-      Order newOrder = new Order("test", description, 134, 10012022);  //[Using last week's CR program to calculate the prices]
+      Order newOrder = new Order("test", description, 134, 10032022);  //[Using last week's CR program to calculate the prices]
 
       //Act
       string updatedDescription = "30 Bread Loaves, 30 Pastries";
@@ -70,8 +70,8 @@ namespace Bakery.Tests
       //Arrange
       string description01 = "10 Bread Loaves, 10 Pastries";
       string description02 = "50 Bread Loaves, 50 Pastries";
-      Order newOrder1 = new Order("Test-order 1", description01, 52, 10012022);
-      Order newOrder2 = new Order("Test-order 2", description02, 254, 10012022); 
+      Order newOrder1 = new Order("Test-order 1", description01, 52, 10032022);
+      Order newOrder2 = new Order("Test-order 2", description02, 254, 10032022); 
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       //Act
@@ -86,7 +86,7 @@ namespace Bakery.Tests
     {
       //Arrange
       string description = "15 Bread Loaves, 1 Pastry";
-      Order newOrder = new Order("test", description, 52, 10012022);
+      Order newOrder = new Order("test", description, 52, 10012022, 10032022);
 
       //Act
       int result = newOrder.Id;
@@ -101,8 +101,8 @@ namespace Bakery.Tests
       //Arrange
       string description01 = "100 Bread Loaves, 50 Pastries";
       string description02 = "5 Bread Loaves, 5 Pastries";
-      Order newOrder1 = new Order("Order 1", description01, 419, 10012022);
-      Order newOrder2 = new Order("Order 2", description02, 29, 10012022);
+      Order newOrder1 = new Order("Order 1", description01, 419, 10012022, 10032022);
+      Order newOrder2 = new Order("Order 2", description02, 29, 10012022, 10032022);
 
       //Act
       Order result = Order.Find(2);

@@ -111,6 +111,47 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(newVendor2, result);
     }
+
+    [TestMethod]
+    public void AddOrder_AddsOrderAndReturnsUpdatedList_List<Order>()
+    {
+      //Arrange
+      string description01 = "Open-air coffee shop/cafe";
+      string description02 = "Street shop that sells loaves of bread and pastries to breakfast makers";
+      Vendor newVendor1 = new Vendor("Annie's Coffee Bar & Cafe", description01);
+      Vendor newVendor2 = new Vendor("Simple Italian Breakfasts", description02);
+      Order orderToAdd = new Order("Pastries", "20 Pastries", 34, 10022022, 10042022);
+
+      //Act
+
+      newVendor1.AddOrder(orderToAdd);  
+      List<Order> result = Vendor.Find(1).Orders; //Searches for -- and finds -- 'newVendor1' in Vendor list (using its Unique Id as a guide), and copies the object's List field to this variable.
+
+      //Assert
+      Assert.AreEqual(newVendor1.Orders, result); 
+    }
+
+/*
+    [TestMethod]
+    public void ShowOrders_FindsVendorAndReturnsCorrectOrdersList_List<Order>()
+    {
+      //Arrange
+      string description01 = "Open-air coffee shop/cafe";
+      string description02 = "Street shop that sells loaves of bread and pastries to breakfast makers";
+      Vendor newVendor1 = new Vendor("Annie's Coffee Bar & Cafe", description01);
+      Vendor newVendor2 = new Vendor("Simple Italian Breakfasts", description02);
+      Order order1 = new Order("Planned Selection of food for day after tomorrow", "20 Bread Loaves, 30 Pastries", 120, 10022022, 10042022);
+      Order order2 = new Order("Supply for next 3 Days", "60 Bread Loaves, 100 Pastries", 367, 10022022, 10032022); 
+
+
+      //Act
+      List<Order> result1 = newVendor1.ShowOrders(); 
+      List<Order> result2 = newVendor2.ShowOrders();
+
+      //Assert
+      Assert.AreEqual(newVendor1.Orders, result1);
+      Assert.AreEqual(newVendor2.Orders, result2);
+    }
 /*
     [TestMethod]
     public void Show_ReturnsCorrectOrderListFromVendor_OrderList()
