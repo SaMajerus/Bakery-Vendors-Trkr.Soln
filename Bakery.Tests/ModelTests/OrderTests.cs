@@ -25,7 +25,8 @@ namespace Bakery.Tests
     {
       //Arrange
       string description = "30 Bread Loaves, 20 Pastries";
-      Order newOrder = new Order("test", description, 290, 10012022);  //Params: (string name, string description, int totalPrice, int d8) 
+      Order newOrder = new Order("test", description, 134, 10012022);  //Params: (string name, string description, int totalPrice, int d8) 
+        //[Using last week's CR program to calculate the price]
 
       //Act
       string result = newOrder.Description;
@@ -33,23 +34,23 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(description, result);
     }
-/*
+
     [TestMethod]
     public void SetDescription_SetDescription_String()
     {
       //Arrange
-      string description = "Walk the dog.";
-      Order newOrder = new Order(description);
+      string description = "30 Bread Loaves, 20 Pastries";
+      Order newOrder = new Order("test", description, 134, 10012022);  //[Using last week's CR program to calculate the prices]
 
       //Act
-      string updatedDescription = "Do the dishes";
+      string updatedDescription = "30 Bread Loaves, 30 Pastries";
       newOrder.Description = updatedDescription;
       string result = newOrder.Description;
 
       //Assert
       Assert.AreEqual(updatedDescription, result);
     }
-    
+
     [TestMethod]
     public void GetAll_ReturnsEmptyList_OrderList()
     {
@@ -62,15 +63,15 @@ namespace Bakery.Tests
       // Assert
       CollectionAssert.AreEqual(newList, result);
     }
-
+/*
     [TestMethod]
     public void GetAll_ReturnsOrders_OrderList()
     {
       //Arrange
-      string description01 = "Walk the dog";
-      string description02 = "Wash the dishes";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
+      string description01 = "10 Bread Loaves, 10 Pastries";
+      string description02 = "50 Bread Loaves, 50 Pastries";
+      Order newOrder1 = new Order("Test-order 1", description01, 52, 10012022);
+      Order newOrder2 = new Order("Test-order 2", description02, 254, 10012022); 
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       //Act
