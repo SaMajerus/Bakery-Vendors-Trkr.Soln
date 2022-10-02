@@ -35,25 +35,25 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(description, result);
     }
-/*
+
     [TestMethod]
     public void SetDescription_SetDescription_String()
-    {
-      //Arrange
-      string description = "Walk the dog.";
-      Vendor newVendor = new Vendor(description);
+    { 
+      //Arrange 
+      string description = "Open-air corner cafe and coffee shop"; 
+      Vendor newVendor = new Vendor("Annie's Coffee Bar & Cafe", description);
 
       //Act
-      string updatedDescription = "Do the dishes";
+      string updatedDescription = "Open-air coffee shop/cafe";
       newVendor.Description = updatedDescription;
       string result = newVendor.Description;
 
       //Assert
       Assert.AreEqual(updatedDescription, result);
     }
-    
+/*    
     [TestMethod]
-    public void GetAll_ReturnsEmptyList_VendorList()
+    public void GetAll_ReturnsEmptyList_ListOfVendors()
     {
       // Arrange
       List<Vendor> newList = new List<Vendor> { };
