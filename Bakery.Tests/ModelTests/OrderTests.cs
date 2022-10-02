@@ -80,13 +80,13 @@ namespace Bakery.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
-/*
+
     [TestMethod]
     public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
     {
       //Arrange
-      string description = "Walk the dog.";
-      Order newOrder = new Order(description);
+      string description = "15 Bread Loaves, 1 Pastry";
+      Order newOrder = new Order("test", description, 52, 10012022);
 
       //Act
       int result = newOrder.Id;
@@ -94,7 +94,7 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
-
+/*
     [TestMethod]
     public void Find_ReturnsCorrectOrder_Order()
     {
