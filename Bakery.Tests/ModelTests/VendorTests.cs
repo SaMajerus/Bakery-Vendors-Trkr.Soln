@@ -95,7 +95,7 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
-/*
+
     [TestMethod]
     public void Find_ReturnsCorrectVendor_Vendor()
     {
@@ -111,7 +111,7 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(newVendor2, result);
     }
-
+/*
     [TestMethod]
     public void Show_ReturnsCorrectOrderListFromVendor_OrderList()
     {
