@@ -15,14 +15,14 @@ namespace Bakery.Tests
       Vendor.ClearAll();
     }
 
-    [TestMethod]
+    [TestMethod]  //1
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor() 
     {
       Vendor newVendor = new Vendor("test", "don't worry about it");  
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
    
-    [TestMethod]
+    [TestMethod]  //2
     public void GetDescription_ReturnsDescription_String()
     {
       //Arrange
@@ -36,7 +36,7 @@ namespace Bakery.Tests
       Assert.AreEqual(description, result);
     }
 
-    [TestMethod]
+    [TestMethod]  //3
     public void SetDescription_SetDescription_String()
     { 
       //Arrange 
@@ -52,7 +52,7 @@ namespace Bakery.Tests
       Assert.AreEqual(updatedDescription, result);
     }
 
-    [TestMethod]
+    [TestMethod]  //4
     public void GetAll_ReturnsEmptyList_VendorList()
     {
       // Arrange
@@ -65,7 +65,7 @@ namespace Bakery.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
-    [TestMethod]
+    [TestMethod]  //5
     public void GetAll_ReturnsVendors_VendorList()
     {
       //Arrange
@@ -82,7 +82,7 @@ namespace Bakery.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
-    [TestMethod]
+    [TestMethod]  //6
     public void GetId_VendorsInstantiateWithAnIdAndGetterReturns_Int()
     {
       //Arrange
@@ -96,7 +96,7 @@ namespace Bakery.Tests
       Assert.AreEqual(1, result);
     }
 
-    [TestMethod]
+    [TestMethod]  //7
     public void Find_ReturnsCorrectVendor_Vendor()
     {
       //Arrange
@@ -112,7 +112,7 @@ namespace Bakery.Tests
       Assert.AreEqual(newVendor2, result);
     }
 
-    [TestMethod]
+    [TestMethod]  //8
     public void AddOrder_AddsOrderAndReturnsUpdatedList_List<Order>()
     {
       //Arrange
@@ -123,7 +123,6 @@ namespace Bakery.Tests
       Order orderToAdd = new Order("Pastries", "20 Pastries", 34, 10022022, 10042022);
 
       //Act
-
       newVendor1.AddOrder(orderToAdd);  
       List<Order> result = Vendor.Find(1).Orders; //Searches for -- and finds -- 'newVendor1' in Vendor list (using its Unique Id as a guide), and copies the object's List field to this variable.
 
@@ -132,7 +131,7 @@ namespace Bakery.Tests
     }
 
 /*
-    [TestMethod]
+    [TestMethod]  //9
     public void ShowOrders_FindsVendorAndReturnsCorrectOrdersList_List<Order>()
     {
       //Arrange
@@ -153,7 +152,7 @@ namespace Bakery.Tests
       Assert.AreEqual(newVendor2.Orders, result2);
     }
 /*
-    [TestMethod]
+    [TestMethod]  //10
     public void Show_ReturnsCorrectOrderListFromVendor_OrderList()
     {
       //Arrange
