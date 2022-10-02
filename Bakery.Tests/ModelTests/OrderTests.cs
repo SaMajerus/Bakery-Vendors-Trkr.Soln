@@ -40,7 +40,7 @@ namespace Bakery.Tests
     {
       //Arrange
       string description = "30 Bread Loaves, 20 Pastries";
-      Order newOrder = new Order("test", description, 134, 10032022);  //[Using last week's CR program to calculate the prices]
+      Order newOrder = new Order("test", description, 134, 10012022, 10032022);  //[Using last week's CR program to calculate the prices]
 
       //Act
       string updatedDescription = "30 Bread Loaves, 30 Pastries";
@@ -70,8 +70,8 @@ namespace Bakery.Tests
       //Arrange
       string description01 = "10 Bread Loaves, 10 Pastries";
       string description02 = "50 Bread Loaves, 50 Pastries";
-      Order newOrder1 = new Order("Test-order 1", description01, 52, 10032022);
-      Order newOrder2 = new Order("Test-order 2", description02, 254, 10032022); 
+      Order newOrder1 = new Order("Test-order 1", description01, 52, 10012022, 10032022);
+      Order newOrder2 = new Order("Test-order 2", description02, 254, 10012022, 10032022); 
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       //Act
@@ -112,8 +112,6 @@ namespace Bakery.Tests
     }
   }
 }
-
-
 
 
 
