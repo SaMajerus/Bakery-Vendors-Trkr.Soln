@@ -51,9 +51,9 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(updatedDescription, result);
     }
-/*    
+
     [TestMethod]
-    public void GetAll_ReturnsEmptyList_ListOfVendors()
+    public void GetAll_ReturnsEmptyList_VendorList()
     {
       // Arrange
       List<Vendor> newList = new List<Vendor> { };
@@ -69,10 +69,10 @@ namespace Bakery.Tests
     public void GetAll_ReturnsVendors_VendorList()
     {
       //Arrange
-      string description01 = "Walk the dog";
-      string description02 = "Wash the dishes";
-      Vendor newVendor1 = new Vendor(description01);
-      Vendor newVendor2 = new Vendor(description02);
+      string description01 = "Open-air coffee shop/cafe";
+      string description02 = "Street shop that sells loaves of bread and pastries to breakfast makers";
+      Vendor newVendor1 = new Vendor("Annie's Coffee Bar & Cafe", description01);
+      Vendor newVendor2 = new Vendor("Simple Italian Breakfasts", description02);
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
       //Act
@@ -81,7 +81,7 @@ namespace Bakery.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
-
+/*
     [TestMethod]
     public void GetId_VendorsInstantiateWithAnIdAndGetterReturns_Int()
     {
