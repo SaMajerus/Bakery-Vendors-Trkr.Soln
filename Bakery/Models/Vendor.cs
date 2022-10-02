@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Bakery.Models;
 
 namespace Bakery.Models{
   public class Vendor{ 
@@ -31,6 +32,7 @@ namespace Bakery.Models{
     }
 
     public void AddOrder(Order request) {
+      //Order addThis = new Order(request.OrderName, request.Description, request.TotalPrice, request.DateSubmitted, request.DeliverBy);
       Orders.Add(request); 
     }
 
