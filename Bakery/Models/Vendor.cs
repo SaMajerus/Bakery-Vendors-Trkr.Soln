@@ -5,14 +5,14 @@ namespace Bakery.Models{
 
     private static List<Vendor> _vendors = new List<Vendor> {}; 
     public string VendorName { get; set; } 
-    public string VendorDesc { get; set; }  
+    public string Description { get; set; }  
     public List<Order> Orders { get; set; }  
     public int Id { get; }
 
 
     public Vendor(string name, string desc) { 
       VendorName = name;
-      VendorDesc = desc;
+      Description = desc;
       _vendors.Add(this);
       Id = _vendors.Count; 
       Orders = new List<Order> {};  //Fully initializes the List here, so it's ready to accept Order objects as soon as the constructor is done, at the earliest. 

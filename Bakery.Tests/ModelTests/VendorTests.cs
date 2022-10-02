@@ -21,13 +21,13 @@ namespace Bakery.Tests
       Vendor newVendor = new Vendor("test", "don't worry about it");  
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
-/*    
+   
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
       //Arrange
-      string description = "Walk the dog.";
-      Vendor newVendor = new Vendor(description);
+      string description = "Don't worry about it";
+      Vendor newVendor = new Vendor("test cafe", description);
 
       //Act
       string result = newVendor.Description;
@@ -35,7 +35,7 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(description, result);
     }
-
+/*
     [TestMethod]
     public void SetDescription_SetDescription_String()
     {
