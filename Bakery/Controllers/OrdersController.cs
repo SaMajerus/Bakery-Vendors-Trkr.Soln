@@ -23,7 +23,7 @@ namespace Bakery.Controllers
 
 
 
-    [HttpPost("/orders")]
+    [HttpPost("/orders/new")]
     public ActionResult Create(string orderName, string orderDescription, int price, int dateSubbed, int deliverByDate)
     {
       Order newOrder = new Order(orderName, orderDescription, price, dateSubbed, deliverByDate);
@@ -42,7 +42,7 @@ namespace Bakery.Controllers
     }
 
     //This one creates new Orders for a given Vendor, NOT for new Vendors:  
-    [HttpPost("/vendors/{vendorId}/orders")]  
+    [HttpPost("/orders/{vendorId}/orders")]  
     public ActionResult Create(int vendorId, string orderName, string orderDescription, int price, int dateSubmitted, int dateDeliver)  
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
