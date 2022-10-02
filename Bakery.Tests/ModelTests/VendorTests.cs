@@ -5,7 +5,7 @@ using System;
 
 namespace Bakery.Tests
 { 
-/*  
+
   [TestClass]
   public class VendorTests : IDisposable
   {
@@ -18,10 +18,10 @@ namespace Bakery.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor() 
     {
-      Vendor newVendor = new Vendor("test");  
+      Vendor newVendor = new Vendor("test", "don't worry about it");  
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
-    
+/*    
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
@@ -110,6 +110,6 @@ namespace Bakery.Tests
 
       //Assert
       Assert.AreEqual(newVendor2, result);
-    }
-  }*/
+    }*/
+  }
 }
