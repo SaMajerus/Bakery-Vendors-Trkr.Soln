@@ -22,11 +22,11 @@ namespace Bakery.Controllers
     }
 
 
-/*
+
     [HttpPost("/orders")]
-    public ActionResult Create(string categoryName, string orderDescription, int price, int date)
+    public ActionResult Create(string orderName, string orderDescription, int price, int dateSubbed, int deliverByDate)
     {
-      Order newOrder = new Order(orderTitle, orderDescription, price, date);
+      Order newOrder = new Order(orderName, orderDescription, price, dateSubbed, deliverByDate);
       return RedirectToAction("Index");
     }
 
@@ -34,25 +34,25 @@ namespace Bakery.Controllers
     public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Category selectedCategory = Category.Find(id);
-      List<Item> categoryItems = selectedCategory.Items;
-      model.Add("category", selectedCategory);
-      model.Add("items", categoryItems);
+      Vendor selectedVendor = Vendor.Find(id);
+      List<Order> vendorOrders = selectedVendor.Orders;
+      model.Add("vendor", selectedVendor);
+      model.Add("orders", vendorOrders);
       return View(model);
     }
 
-    //This one creates new Items within a given Category, not new Categories:  
-    [HttpPost("/categories/{categoryId}/items")]  
-    public ActionResult Create(int categoryId, string itemDescription)  
+    //This one creates new Orders for a given Vendor, NOT for new Vendors:  
+    [HttpPost("/vendors/{vendorId}/orders")]  
+    public ActionResult Create(int vendorId, string orderName, string orderDescription, int price, int dateSubmitted, int dateDeliver)  
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Category foundCategory = Category.Find(categoryId);
-      Item newItem = new Item(itemDescription);
-      foundCategory.AddItem(newItem);
-      List<Item> categoryItems = foundCategory.Items;
-      model.Add("items", categoryItems);
-      model.Add("category", foundCategory);
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(orderName, orderDescription, price, dateSubmitted, dateDeliver);
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrders = foundVendor.Orders;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", foundVendor);
       return View("Show", model);
-    }*/
+    }
   }
 }
