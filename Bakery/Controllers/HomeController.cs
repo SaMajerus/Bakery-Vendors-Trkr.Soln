@@ -12,8 +12,8 @@ namespace Bakery.Controllers
     }
 
 /*
-    [Route("/favorite_photos")]
-    public ActionResult FavoritePhotos()
+    [Route("/photos")]
+    public ActionResult Photos()
     {
       return View();
     }
