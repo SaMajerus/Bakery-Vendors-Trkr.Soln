@@ -18,7 +18,7 @@ namespace Bakery.Controllers
     [HttpGet("vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
-      Vendor ven = Vendor.Find(artistId);
+      Vendor ven = Vendor.Find(vendorId);
       return View(ven);  //Route: 'Bakery/Views/Orders/New.cshtml' 
     }
 
