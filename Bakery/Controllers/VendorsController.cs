@@ -21,7 +21,6 @@ namespace Bakery.Controllers
       return View(); //Displays this file on the user's screen:  'Bakery/Views/Vendors/New.cshtml' 
     }
 
-
     [HttpPost("/vendors")]
     public ActionResult Create(string vendorName, string desc)
     {
@@ -54,16 +53,6 @@ namespace Bakery.Controllers
       model.Add("vendor", foundVendor);
       return View("Show", model);  //Routes to 'Bakery/Views/Vendors/Show.cshtml' 
     }
-    
 
-
-    /*
-    //This is an experiment -- don't know if it'll work. (When clicked, it's supposed to display(/Show(?)) all of a given Vendor's listed Orders).
-    [HttpGet("/vendors/show")]
-    public ActionResult Show()
-    {
-      List<Order> allOrdersFromVendor = Vendor.Orders.GetAll();  //'Orders' is the name of the List<Order> field for any given Vendor object.
-      return View(allOrdersFromVendor);
-    }*/
   }
 }

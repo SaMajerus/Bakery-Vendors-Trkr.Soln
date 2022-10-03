@@ -10,7 +10,6 @@ namespace Bakery.Models{
     public List<Order> Orders { get; set; }  
     public int Id { get; }
 
-
     public Vendor(string name, string desc) { 
       VendorName = name;
       Description = desc;
@@ -32,7 +31,6 @@ namespace Bakery.Models{
     }
 
     public void AddOrder(Order request) {
-      //Order addThis = new Order(request.OrderName, request.Description, request.TotalPrice, request.DateSubmitted, request.DeliverBy);
       Orders.Add(request); 
     }
 

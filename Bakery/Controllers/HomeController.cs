@@ -10,14 +10,6 @@ namespace Bakery.Controllers
     {
       return View();
     }
-
-/*
-    [Route("/photos")]
-    public ActionResult Photos()
-    {
-      return View();
-    }
-*/ 
-
+    
   }
 }
