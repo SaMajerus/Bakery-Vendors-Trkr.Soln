@@ -1,11 +1,12 @@
  @{
     Layout = "_Layout";
   }
-    <h1>Record List Details: </h1>
+    <h1>Orders List Details: </h1>
 
-    <h2>@Model["order"].OrderName</h2>
+    <h2>@Model["orders"].OrderName</h2>
     <h3>vendor: @Model["vendor"].VendorName</h3>
 
     <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
     <br>
     <a href='/vendors'>View all vendors</a>   <!-- Destination: 'Bakery/Views/Vendors/Index.cshtml' --> 
+    <!--<p>(Note: to view the new order's details--   Click the button above. Then, in the resulting list, click the vendor's name, and then the order's name.)</p>-->
