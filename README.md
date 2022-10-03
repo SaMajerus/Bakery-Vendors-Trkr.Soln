@@ -1,9 +1,8 @@
-# "Pierre's Bakery"  (Console App)
+# Pierre's Vendor Tracker
 
 #### By Sam Majerus
 
-#### A Console application that allows the User to enter how many of each item they want at this hypothetical Bakery.  Based on their entry and the pre-defined pricing (the latter being shown in a Listing before the first text-prompt), they get a receipt printed out for them in return.  The receipt shows -- for each item -- the entered quantity, and the resultant USD price.   
-(Disclaimer:  To the best of my knowledge, the Bakery name that Epicodus uses in this Independent Project's prompt is a hypothetical detail.  If there exists a bakery that is so-named, then I'm sure that the fact it's used in the prompt is purely coincidental.) 
+#### A web application that Pierre can use to track what orders he has, and for/from which Vendor(s).  (Features that allow for other uses -- i.e. basic financial tracking for an order -- are possible to implement, but aren't included with this bare-bones MVP iteration.)  
 <br>
 
 ## Technologies Used
@@ -11,6 +10,12 @@
 * C# (C-sharp)
 * .NET 5 
 * Markdown
+* ASP.NET Core
+* ASP.NET Core - MVC 
+* Razor
+* RESTful Routing coventions
+* Layout files 
+* HTML 5(?); CSHTML 
 * Git Bash (Used in: Local Cmd-line Terminal, navigation of local directories)
 * GitHub (Remote repositories)
 * GitHub template repository (MSTest)
@@ -19,25 +24,11 @@
 
 ## Description
 
-The program starts by printing out a greeting to the User in the Console.    Immediately following this is a Pricing section.  Note that the User can only choose between two different items to "buy":   Loaves of Bread  or  Pastries. 
-The Baseline Prices -- the price for 1 item -- are printed first, followed by the 'Deals' section. Currently there's just a "Buy 2, Get 1 Free!" (B2G1) deal for each Item. 
+The program starts by printing out a greeting to the User on the Splash page. Then the user can navigate to the page where the Vendors are listed. The blue text strings are indeed hyperlinks, but they function more like buttons in this context. Thus, the user clicks on those to navigate to the desired pages. 
+The Vendors list will start off blank, so the user has to create a new vendor before they can proceed further. Once that is done, they can add a New Order for that Vendor.   (Please note that order information is only accessible via the given Vendor's page, on which their List of Orders is displayed. The user can navigate back there from the page that comes up after adding the Order as follows: First, click the button to go back to the List of Vendors. Then, click the Vendor that the Order was added for. Lastly, click on the desired Order from those Listed.) 
 
-If the User inputs a number for each item that is greater than 3 and -- when divided -- the whole-numbered quotient is 2 or more, then the B2G1 deal (for the Item type in question) gets applied once for each group of 3 items in that number. After that, the remaining items that are priced accordingly.  <br><br>
-To help you -- the Reader -- understand a bit better, let me give an Example Case. <br> 
-  Let's say a User wants to buy 8 Loaves of Bread and no Pastries.  (Now, I don't know Who would buy that many Loaves of Bread, nor Why, but I digress.)   The greatest number that is both less than 8  AND a Factor of 3  is '6'.   So, for that portion, the B2G1 deal gets applied (which amounts to $20 total for those six).   
-  Now:  since the Baseline Price for  1 Loaf  is $5, and there are two remaining to be counted, the cost for them is $10.    
-  Result:  the Total Price for 8 Loaves of Bread  =  $30.  And since no Pastries were bought, that is also the Grand Total. 
-<br><br>
+Note that this application is the Minimum-Viable-Product iteration, and so features are minimal. 
 
-The if-else branching that conducts those calculations are laid out in the way described, by the way.  So, too, is the formatting of the User's outputted Receipt, which I've taken the liberty of describing below. <br> 
-
-The Receipt's content is printed out in the following order: 
-1)  For each item,  it prints  the Quantity entered by the user, followed by the resultant price in US Dollars (USD, $). 
-2)  Next, the program sums the two price totals and prints that result for the User's 'Grand Total' price. 
-<br><br>
-
-The last piece of the program -- the farewell message -- is printed in the Console, with a couple lines of Whitespace to make the Receipt text easier to find. 
-<br><br><br>
 
 
 ## Setup/Installation Requirements
@@ -62,16 +53,18 @@ The last piece of the program -- the farewell message -- is printed in the Conso
 * Running the Program <br>
   <!-- IMPORTANT: If your current directory location is not the same as it was for the most recent Step, the instructions that follow WILL NOT WORK.  -->
   
-  * In your GIT BASH command line, enter this command:  'dotnet run' .   The files will be compiled and then the program will run. 
-  Once the Welcome message and other text appears in your Console, the Program has started!  
+  * In your GIT BASH command line, enter this command:  'dotnet run' .   The files will be compiled and then the application will be started. 
+  In the terminal, once the last line of prompts says something like    ''Ctrl-C to end the Application'',  'Ctrl + Left-click' the 'localhost:5000' link. A new tab will open in your browser -- and the rest should be self-explanitory. 
+
   To run the program again after a given session ends, simply reenter   dotnet run   as before.
 <br><br><br>
-  
+
+
 * If you get an error, here are Troubleshooting steps to try (In Order): 
   * 9 times out of 10, an error message will appear if you try to run the program whilst being in the wrong directory location.  
   To make sure you're in the right place, do the following. 
     * In your Git Bash command line, enter the command  'pwd'.  The Path leading to your current Folder (a.k.a. Directory) location will be printed out.   
-    If the last 2 Directories in that Path DO NOT match the following snippet, then you're located in the wrong place. ('CONTAINER' represents your Containing Folder, which is what Contains the Program's Parent/Root folder):          .../CONTAINER/Bakery-csharp/Bakery 
+    If the last 2 Directories in that Path DO NOT match the following snippet, then you're located in the wrong place. ('CONTAINER' represents your Containing Folder, which is what Contains the Program's Parent/Root folder):          .../CONTAINER/BkyVendors/Bakery 
 
   * If you're in the Right Place:  try entering the command  'dotnet restore'.  Once its process is completed, try entering  'dotnet run' again. 
 
@@ -82,7 +75,7 @@ The last piece of the program -- the farewell message -- is printed in the Conso
 
 
 ## Known Bugs
-* May not work properly if negative numbers, non-numbers (like Strings), etc. are input when prompted.  (No error checking implemented at the moment)
+* May throw an error under certain conditions if the user hits the back arrow after resubmitting a form (i.e. on the 'New Order' page). 
 <br>
 
 
@@ -90,4 +83,4 @@ The last piece of the program -- the farewell message -- is printed in the Conso
 
 Email me at ladolego@gmail.com for questions, ideas, concerns, or even any issues that you run into. You may also clone or Fork the content in this Repo to fiddle around with it, if you like.
 
-Licensed through MIT. Copyright (c) 9/23/2022, Samuel Majerus.
+Licensed through MIT. Copyright (c) 10/03/2022, Samuel Majerus.
