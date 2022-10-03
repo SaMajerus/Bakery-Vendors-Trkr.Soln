@@ -7,9 +7,12 @@
   </head>
   <body>
     <h1>Add an Order</h1>
-    <p>Enter your order details here:</p>
+    <p>Enter the order's details here:</p>
 
-    <form action="/orders" method="post">
+    <form action="/orders/@Model.Id/orders" method="post">
+      <!--Since we just came from  'Bakery/Views/Vendors/Show.cshtml' Ln16  [by way of 'Bakery/Controllers/OrdersController.cs' Ln18-22], we want to stealthily include our Vendor's Unique-Id value in the Submitted form. We thus ensure that the Order added to the Order-list for the correct Vendor.--> 
+      <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id"> 
+
       <label for="orderTitle">Order Title</label>
       <input id="orderTitle" name="orderTitle" type="text">
       <label for="orderDescription">Description</label>
@@ -20,10 +23,10 @@
       <input id="dateSubbed" name="dateSubbed" type="number">
       <label for="deliverByDate">Date by which the order must be delivered (mmddyyyy)</label>
       <input id="deliverByDate" name="deliverByDate" type="number">
-      <button type="submit">Add</button>
+      <button type="submit">Add</button>  <!--Route:  -->
     </form>
 
     <p><a href="/">Back home</a></p>
-    <p><a href="/categories">Back to Vendors</a></p>
+    <p><a href="/vendors">Back to Vendors</a></p>
   </body>
 </html>

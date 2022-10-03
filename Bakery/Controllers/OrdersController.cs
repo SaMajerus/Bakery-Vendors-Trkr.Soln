@@ -8,25 +8,24 @@ namespace Bakery.Controllers
   public class OrdersController : Controller
   {
 
-    [HttpGet("/orders")]
+    [HttpGet("vendors/orders")]
     public ActionResult Index()
     {
       List<Order> allOrders = Order.GetAll();
-      return View(allOrders);
+      return View(allOrders); 
     }
 
-    [HttpGet("/orders/new")]
-    public ActionResult New()
+    [HttpGet("vendors/{vendorId}/orders/new")]
+    public ActionResult New(int vendorId)
     {
-      return View(); 
+      Vendor ven = Vendor.Find(artistId);
+      return View(ven);  //Route: 'Bakery/Views/Orders/New.cshtml' 
     }
 
-
-
-    [HttpPost("/orders/new")]
-    public ActionResult Create(string orderName, string orderDescription, int price, int dateSubbed, int deliverByDate)
+    [HttpPost("/orders/new")]   //Only for a new Vendor. 
+    public ActionResult Create(string orderTitle, string orderDescription, int price, int dateSubbed, int deliverByDate)
     {
-      Order newOrder = new Order(orderName, orderDescription, price, dateSubbed, deliverByDate);
+      Order newOrder = new Order(orderTitle, orderDescription, price, dateSubbed, deliverByDate);
       return RedirectToAction("Index");
     }
 
@@ -42,7 +41,8 @@ namespace Bakery.Controllers
     }
 
     //This one creates new Orders for a given Vendor, NOT for new Vendors:  
-    [HttpPost("/orders/{vendorId}/orders")]  
+    //[HttpPost("orders/{vendorId}/orders/new")]  
+    [HttpPost("/vendors/{vendorId}/orders")] 
     public ActionResult Create(int vendorId, string orderName, string orderDescription, int price, int dateSubmitted, int dateDeliver)  
     {
       Dictionary<string, object> model = new Dictionary<string, object>();

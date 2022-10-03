@@ -18,49 +18,54 @@ namespace Bakery.Controllers
     [HttpGet("/vendors/new")]
     public ActionResult New()
     {
-      return View();
+      return View(); //Displays this file on the user's screen:  'Bakery/Views/Vendors/New.cshtml' 
     }
 
-/*
+
+    [HttpPost("/vendors")]
+    public ActionResult Create(string vendorName, string desc)
+    {
+      Vendor newVendor = new Vendor(vendorName, desc);
+      return RedirectToAction("Index");  //Goes to method on Line 12. 
+    }
+
+    [HttpGet("/vendors/{id}")] //If User clicks on a Vendor with Unique-Id 'id' while at ''/vendors'', then we do this. 
+    public ActionResult Show(int id)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor selectedVendor = Vendor.Find(id);
+      List<Order> vendorOrders = selectedVendor.Orders;
+      model.Add("vendor", selectedVendor);
+      model.Add("orders", vendorOrders);
+      return View(model);  //Shows the user Orders from their selected Vendor; routes to  'Bakery/Views/Vendors/Show.cshtml' (?). 
+    }
+
+    //This one creates new Orders within a given Vendor, not a new Vendor:  
+    [HttpPost("/vendors/{vendorId}/orders")]  
+    public ActionResult Create(int vendorId, string orderDescription)  
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(orderDescription);
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrders = foundVendor.Orders;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);  //Routes to 'Bakery/Views/Vendors/Show.cshtml' 
+    }
+
+
+
+
+
+
+    /*
     //This is an experiment -- don't know if it'll work. (When clicked, it's supposed to display(/Show(?)) all of a given Vendor's listed Orders).
     [HttpGet("/vendors/show")]
     public ActionResult Show()
     {
       List<Order> allOrdersFromVendor = Vendor.Orders.GetAll();  //'Orders' is the name of the List<Order> field for any given Vendor object.
       return View(allOrdersFromVendor);
-    }*/
-
-/*
-    [HttpPost("/categories")]
-    public ActionResult Create(string categoryName)
-    {
-      Category newCategory = new Category(categoryName);
-      return RedirectToAction("Index");
-    }
-
-    [HttpGet("/categories/{id}")]
-    public ActionResult Show(int id)
-    {
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      Category selectedCategory = Category.Find(id);
-      List<Item> categoryItems = selectedCategory.Items;
-      model.Add("category", selectedCategory);
-      model.Add("items", categoryItems);
-      return View(model);
-    }
-
-    //This one creates new Items within a given Category, not new Categories:  
-    [HttpPost("/categories/{categoryId}/items")]  
-    public ActionResult Create(int categoryId, string itemDescription)  
-    {
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      Category foundCategory = Category.Find(categoryId);
-      Item newItem = new Item(itemDescription);
-      foundCategory.AddItem(newItem);
-      List<Item> categoryItems = foundCategory.Items;
-      model.Add("items", categoryItems);
-      model.Add("category", foundCategory);
-      return View("Show", model);
     }*/
   }
 }
