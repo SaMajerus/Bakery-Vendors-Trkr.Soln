@@ -1,0 +1,24 @@
+ @{
+    Layout = "_Layout";
+  }
+
+    @using Bakery.Models;
+
+    <h1>Vendors</h1>
+
+    @if (Model.Count == 0) {
+      <h3>No vendors have been added yet.</h3>
+    } 
+    else 
+    {
+      @foreach (Vendor vendor in Model)
+      {
+        <h3><a href='/vendors/@vendor.Id'>@vendor.VendorName</a></h3>
+      }
+    }
+
+    <p><a href='/vendors/new'>Add a new Artist.</a>  <!--If clicked:  'VendorsController.cs' Ln18-21  =>  'Bakery/Views/Vendors/New.cshtml'. -->
+      <form action="/vendors/delete" method="post">
+      <!-- <button type="submit" name="button" class="btn btn-light">Clear All Vendors</button> -->
+    </form>
+    <p><a href='/'>Back to Home</a></p>
