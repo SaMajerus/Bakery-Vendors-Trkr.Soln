@@ -54,5 +54,12 @@ namespace Bakery.Controllers
       return RedirectToAction("Show", new { id = vendorId });  //Routes to 'Bakery/Views/Vendors/Show.cshtml' 
     }
 
+    [HttpPost("/vendors/delete")]
+    public ActionResult DeleteAll()
+    {
+      Vendor.ClearAll();
+      return View();  //Routes to 'Bakery/Views/Vendors/DeleteAll.cshtml'
+    }
+
   }
 }
