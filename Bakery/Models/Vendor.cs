@@ -33,9 +33,6 @@ namespace Bakery.Models{
     public void AddOrder(Order request) {
       Orders.Add(request); 
     }
-
-    public List<Order> ShowOrders(){
-      return Orders;
-    }
+    
   }
 }
