@@ -27,7 +27,6 @@ namespace Bakery
     {
       app.UseDeveloperExceptionPage();
       app.UseRouting();
-      //app.UseStaticFiles(); //For Stylesheets, media (i.e. images), etc.
 
       app.UseEndpoints(routes =>
       {

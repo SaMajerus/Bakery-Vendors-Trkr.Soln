@@ -40,8 +40,7 @@ namespace Bakery.Controllers
     }
 
     //This one creates new Orders within a given Vendor, not a new Vendor:  
-    [HttpPost("/vendors/{vendorId}/orders/new/")]  
-    //[HttpPost("/vendors/{vendorId}/orders/new/show")]  //??
+    [HttpPost("/vendors/{vendorId}/orders/new/")] 
     public ActionResult Create(int vendorId, string orderTitle, string orderDescription, int price, int d8Entered, int deliverBy)  
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
