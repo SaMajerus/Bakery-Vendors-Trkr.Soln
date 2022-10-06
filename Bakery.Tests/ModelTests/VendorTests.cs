@@ -113,7 +113,7 @@ namespace Bakery.Tests
     }
 
     [TestMethod]  //8
-    public void AddOrder_AddsOrderAndReturnsUpdatedList_List<Order>()
+    public void AddOrder_AddsOrderAndReturnsUpdatedList_OrderList()
     {
       //Arrange
       string description01 = "Open-air coffee shop/cafe";
@@ -132,7 +132,7 @@ namespace Bakery.Tests
 
 /*
     [TestMethod]  //9
-    public void ShowOrders_FindsVendorAndReturnsCorrectOrdersList_List<Order>()
+    public void ShowOrders_FindsVendorAndReturnsCorrectOrdersList_OrderList()
     {
       //Arrange
       string description01 = "Open-air coffee shop/cafe";
@@ -150,22 +150,7 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(newVendor1.Orders, result1);
       Assert.AreEqual(newVendor2.Orders, result2);
-    }
-/*
-    [TestMethod]  //10
-    public void Show_ReturnsCorrectOrderListFromVendor_OrderList()
-    {
-      //Arrange
-      string description01 = "Walk the dog";
-      string description02 = "Wash the dishes";
-      Vendor newVendor1 = new Vendor(description01);
-      Vendor newVendor2 = new Vendor(description02);
-
-      //Act
-      Vendor result = Vendor.Find(2);
-
-      //Assert
-      Assert.AreEqual(newVendor2, result);
     }*/
+
   }
 }
