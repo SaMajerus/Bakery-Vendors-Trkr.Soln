@@ -54,5 +54,17 @@ namespace Bakery.Controllers
       return View("Show", model); //Destination: 'Bakery/Views/Orders/Show.cshtml'
     }
 
+    //For viewing a specific order from a certain Vendor
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
+    {
+      Order ord = Order.Find(orderId);
+      Vendor ven = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("orders", ord);
+      model.Add("vendor", ven);
+      return View(model); 
+    }
+
   }
 }
