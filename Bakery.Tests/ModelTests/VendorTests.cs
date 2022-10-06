@@ -130,7 +130,6 @@ namespace Bakery.Tests
       Assert.AreEqual(newVendor1.Orders, result); 
     }
 
-
     [TestMethod]  //9
     public void ShowOrders_FindsVendorAndReturnsCorrectOrdersList_OrderList()
     {
@@ -142,10 +141,9 @@ namespace Bakery.Tests
       Order order1 = new Order("Planned Selection of food for day after tomorrow", "20 Bread Loaves, 30 Pastries", 120, 10022022, 10042022);
       Order order2 = new Order("Supply for next 3 Days", "60 Bread Loaves, 100 Pastries", 367, 10022022, 10032022); 
 
-
       //Act
-      List<Order> result1 = newVendor1.ShowOrders(); 
-      List<Order> result2 = newVendor2.ShowOrders();
+      List<Order> result1 = newVendor1.Orders; 
+      List<Order> result2 = newVendor2.Orders;
 
       //Assert
       Assert.AreEqual(newVendor1.Orders, result1);
