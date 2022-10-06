@@ -130,7 +130,7 @@ namespace Bakery.Tests
       Assert.AreEqual(newVendor1.Orders, result); 
     }
 
-/*
+
     [TestMethod]  //9
     public void ShowOrders_FindsVendorAndReturnsCorrectOrdersList_OrderList()
     {
@@ -150,7 +150,7 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(newVendor1.Orders, result1);
       Assert.AreEqual(newVendor2.Orders, result2);
-    }*/
+    }
 
   }
 }
