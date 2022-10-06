@@ -51,7 +51,7 @@ namespace Bakery.Controllers
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
       model.Add("vendor", foundVendor);
-      return View("Show", model);  //Routes to 'Bakery/Views/Vendors/Show.cshtml' 
+      return RedirectToAction("Show", new { id = vendorId });  //Routes to 'Bakery/Views/Vendors/Show.cshtml' 
     }
 
   }
